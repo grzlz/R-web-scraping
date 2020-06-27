@@ -1,6 +1,5 @@
 library(stringr)
 library(dplyr)
-install.packages("rvest")
 library(rvest)
 
 marketwatch <- read_html(
