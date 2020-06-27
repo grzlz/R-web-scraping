@@ -6,11 +6,7 @@ marketwatch <- read_html(
   "https://www.inmuebles24.com/departamentos-en-venta-en-distrito-federal.html"
 )
 
-marketwatch %>% 
-  html_node("title") %>% 
-  html_text()
-
-makeDF <-function() {
+makeDF <- function() {
   location <- marketwatch %>% 
   html_nodes("span.posting-location.go-to-posting") %>% 
   html_text() %>% 
@@ -21,7 +17,7 @@ makeDF <-function() {
     html_text() %>% 
     str_squish()
   
-   return(df <- data.frame(price, location))
+   return(myData <- data.frame(price, location))
 }
 
 myData <- makeDF()
